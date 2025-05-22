@@ -128,7 +128,6 @@ namespace Code
 
         public void ShowDiceResults(AnimalType result1, AnimalType result2)
         {
-            //diceResultText.text = $"Wyrzucono: {result1} i {result2}";
             diceImage1.sprite = GetSpriteForAnimal(result1);
             diceImage2.sprite = GetSpriteForAnimal(result2);
             diceImage1.gameObject.SetActive(true);

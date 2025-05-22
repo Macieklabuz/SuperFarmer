@@ -9,12 +9,10 @@ namespace Code
         {
             Herd herd = player.Herd;
             
-            // Lista unikalnych typów wyrzuconych zwierząt
             var rolledTypes = new HashSet<AnimalType> { result1, result2 };
 
             foreach (var type in rolledTypes)
             {
-                // Sprawdź, czy gracz ma już choć jedno zwierzę tego typu
                 int baseCount = herd.GetCount(type);
                 int rolledCount = CountOccurrences(type, result1, result2);
                 int totalCount = baseCount + rolledCount;

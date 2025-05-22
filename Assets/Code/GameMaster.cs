@@ -99,10 +99,10 @@ namespace Code
 
             if (WymianaGUI != null)
             {
-                WymianaGUI.SetActive(false); // Ukryj GUI wymiany
+                WymianaGUI.SetActive(false); 
             }
 
-            OnActionButtonPressed(); // Wywołuje logikę rzutu
+            OnActionButtonPressed(); 
         }
 
         public void OnActionButtonPressed()
@@ -156,9 +156,8 @@ namespace Code
             Player currentPlayer = GetCurrentPlayer();
             Debug.Log("Koniec tury gracza: " + currentPlayer.Name);
 
-            var animals = currentPlayer.Herd.GetAnimalCounts(); // Zakładam, że to Dictionary<AnimalType, int>
-
-            // Lista wymaganych zwierząt
+            var animals = currentPlayer.Herd.GetAnimalCounts(); 
+            
             AnimalType[] requiredAnimals = new AnimalType[] 
             {
                 AnimalType.Rabbit, 
@@ -188,8 +187,7 @@ namespace Code
                 
                 return;
             }
-
-            // Jeśli gracz nie wygrał, przejdź do następnego
+            
             currentPlayerIndex = (currentPlayerIndex + 1) % PlayerManager.Instance.NumberOfPlayers;
             StartTurn();
         }

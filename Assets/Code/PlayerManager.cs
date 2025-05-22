@@ -6,8 +6,7 @@ namespace Code
     public class PlayerManager : MonoBehaviour
     {
         public static PlayerManager Instance { get; private set; }
-
-        // Lista imion graczy wprowadzona przez UI lub Inspector
+        
         [SerializeField]
         [Tooltip("Lista imion graczy (2-4)")]
         private List<string> playerNamesInput = new List<string>();
@@ -26,10 +25,7 @@ namespace Code
                 Instance = this;
             }
         }
-
-        /// <summary>
-        /// Inicjalizuje graczy na podstawie imion podanych przez użytkownika.
-        /// </summary>
+        
         public void InitializePlayersFromInput()
         {
             if (playerNamesInput.Count < 2 || playerNamesInput.Count > 4)
@@ -47,10 +43,7 @@ namespace Code
 
             Debug.Log($"Zainicjalizowano {Players.Count} graczy.");
         }
-
-        /// <summary>
-        /// Pozwala ustawić listę imion dynamicznie (np. z UI).
-        /// </summary>
+        
         public void SetPlayerNames(List<string> names)
         {
             playerNamesInput = names;

@@ -10,8 +10,7 @@ namespace Code
             bool wolfRolled = result1 == AnimalType.Wolf || result2 == AnimalType.Wolf;
 
             Herd herd = player.Herd;
-
-            // LIS
+            
             if (foxRolled)
             {
                 if (herd.GetCount(AnimalType.SmallDog) > 0)
@@ -29,8 +28,7 @@ namespace Code
                     }
                 }
             }
-
-            // WILK
+            
             if (wolfRolled)
             {
                 if (herd.GetCount(AnimalType.BigDog) > 0)

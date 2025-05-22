@@ -8,7 +8,6 @@ namespace Code
 
         public Herd()
         {
-            // Startowy królik
             animals[AnimalType.Rabbit] = 1;
         }
         
@@ -23,10 +22,7 @@ namespace Code
                 animals[type] = count;
             }
         }
-
-        /// <summary>
-        /// Dodaje zwierzę do stada.
-        /// </summary>
+        
         public void AddAnimal(AnimalType type, int count = 1)
         {
             if (!animals.ContainsKey(type))
@@ -34,18 +30,12 @@ namespace Code
 
             animals[type] += count;
         }
-
-        /// <summary>
-        /// Zwraca liczbę danego zwierzęcia.
-        /// </summary>
+        
         public int GetCount(AnimalType type)
         {
             return animals.ContainsKey(type) ? animals[type] : 0;
         }
-
-        /// <summary>
-        /// Zwraca pełną mapę wszystkich zwierząt (dla UI).
-        /// </summary>
+        
         public Dictionary<AnimalType, int> GetAnimalCounts()
         {
             return new Dictionary<AnimalType, int>(animals);

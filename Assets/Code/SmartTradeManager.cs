@@ -6,7 +6,6 @@ namespace Code
 {
     public static class SmartTradeManager
     {
-        // Przykład: 1 owca = 6 królików → owca -> rabbit (reverse: rabbit -> owca)
         public struct ExchangeRule
         {
             public AnimalType From;
@@ -14,8 +13,7 @@ namespace Code
             public int FromCount; // ile FROM
             public int ToCount;   // ile TO (standardowo 1)
         }
-
-        // Wartości w królikach
+        
         private static readonly Dictionary<AnimalType, int> rabbitValues = new()
         {
             { AnimalType.Rabbit, 1 },
@@ -26,8 +24,7 @@ namespace Code
             { AnimalType.SmallDog, 6 },
             { AnimalType.BigDog, 36 }
         };
-
-        // Reguły wymiany
+        
         private static readonly List<ExchangeRule> exchangeRules = new()
         {
             new() { From = AnimalType.Sheep, To = AnimalType.Rabbit, FromCount = 1, ToCount = 6 },
@@ -36,8 +33,7 @@ namespace Code
             new() { From = AnimalType.Horse, To = AnimalType.Cow, FromCount = 1, ToCount = 2 },
             new() { From = AnimalType.SmallDog, To = AnimalType.Sheep, FromCount = 1, ToCount = 1 },
             new() { From = AnimalType.BigDog, To = AnimalType.Cow, FromCount = 1, ToCount = 1 },
-
-            // Odwrotne
+            
             new() { From = AnimalType.Rabbit, To = AnimalType.Sheep, FromCount = 6, ToCount = 1 },
             new() { From = AnimalType.Sheep, To = AnimalType.Pig, FromCount = 2, ToCount = 1 },
             new() { From = AnimalType.Pig, To = AnimalType.Cow, FromCount = 3, ToCount = 1 },
@@ -58,8 +54,7 @@ namespace Code
                 Debug.Log("Gracza nie stać na wymianę.");
                 return false;
             }
-
-            // Spróbuj pobrać z jego stada zwierzęta o łącznej wartości >= requiredValue
+            
             var animalsSorted = rabbitValues.OrderByDescending(kv => kv.Value).Select(kv => kv.Key).ToList();
             int remaining = requiredValue;
             Dictionary<AnimalType, int> toRemove = new();
@@ -85,8 +80,7 @@ namespace Code
                 Debug.Log("Gracz nie ma odpowiednich zwierząt do wymiany.");
                 return false;
             }
-
-            // Wykonaj wymianę
+            
             foreach (var kv in toRemove)
                 herd.RemoveAnimal(kv.Key, kv.Value);
 
