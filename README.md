@@ -1,10 +1,10 @@
 # 🐰 Superfarmer – Gra Turowa w Unity 🎲
 
-Cyfrowa wersja gry planszowej **Superfarmer**, stworzona w Unity z zachowaniem oryginalnych zasad: rozmnażanie, wymiana zwierząt, zagrożenia od drapieżników, oraz rozgrywka turowa dla dwóch graczy.
+Cyfrowa wersja gry planszowej **Superfarmer**, stworzona w Unity z zachowaniem oryginalnych zasad: rozmnażanie, wymiana zwierząt, zagrożenia od drapieżników, oraz rozgrywka turowa dla dwóch graczy lub większej ilości graczy.
 
 ## 🎮 Funkcje
 
-- ✅ Turowa rozgrywka dla 2 graczy
+- ✅ Turowa rozgrywka dla 2-4 graczy
 - 🎲 Rzucanie dwoma kostkami – specjalne ikony zwierząt
 - 🐑 Rozmnażanie tylko wylosowanych zwierząt, które gracz już posiada
 - 🦊 Wilk i lis – drapieżniki atakujące gracza zgodnie z zasadami
@@ -44,31 +44,11 @@ Gracz wygrywa grę, jeśli jego stado zawiera **co najmniej po jednym** z nastę
 - 🐄 Krowa
 - 🐎 Koń
 
-## 🖥️ Wymagania
+## 🖥️ Technologie
 
-- Unity 2021 lub nowsze
-- TextMeshPro zainstalowane przez Package Manager
-- Obsługa `EventSystem`, `Canvas`, `Button`, `TextMeshPro`, `GameObject` itd.
+- Unity
+- C#
 
-## 📦 Jak uruchomić?
 
-1. Sklonuj repozytorium
-2. Otwórz projekt w Unity
-3. Uruchom scenę `Main`
-4. Kliknij przycisk `Start Game`
-5. Graj turowo i spróbuj zebrać komplet zwierząt!
+## 📜 Prezentacja
 
-## 🧪 Wskazówki developerskie
-
-- UI obsługuje wszystkie przyciski przez `ExchangeButtonHandler`
-- Wymiana odbywa się tylko raz na turę
-- `AnimalType.cs` zawiera wszystkie możliwe zwierzęta
-- Możesz łatwo dodać nowe przyciski wymiany z poziomu Inspektora
-
-## 📜 Licencja
-
-Projekt edukacyjny – możesz modyfikować i rozszerzać.
-
----
-
-Miłej zabawy z cyfrowym Superfarmerem! 🐰🌾
