@@ -13,6 +13,12 @@ Cyfrowa wersja gry planszowej **Superfarmer**, stworzona w Unity z zachowaniem o
 - 🧠 Tylko jedna wymiana możliwa na turę
 - ✅ Zakończenie gry – wygrana gracza, który zbierze: królik, owca, świnia, krowa, koń
 
+ ## 🖥️ Technologie
+
+- Unity
+- C#
+
+
 ## 🔁 Tabela Wymian (kursy przeliczeniowe)
 
 - 1 owca = 6 królików
@@ -43,12 +49,6 @@ Gracz wygrywa grę, jeśli jego stado zawiera **co najmniej po jednym** z nastę
 - 🐖 Świnia
 - 🐄 Krowa
 - 🐎 Koń
-
-## 🖥️ Technologie
-
-- Unity
-- C#
-
 
 ## 📜 Prezentacja
 
