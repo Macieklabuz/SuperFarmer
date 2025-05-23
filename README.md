@@ -111,7 +111,7 @@ Po kliknięciu przycisku rzut kostką, gra automatycznie zlicza zwierzęta w sta
 
 Po wybraniu opcji **Wymiana**, pojawia się specjalny panel. Po lewej stronie znajdują się zwierzęta, które gracz może oddać, a po prawej – zwierzęta dostępne do otrzymania. Można przeprowadzić tylko **jedną wymianę na turę**.  
 Jeśli gracz nie może przeprowadzić żadnej wymiany, może kliknąć przycisk **Anuluj**, by zrezygnować i wrócić do tury:
-<img width="1440" alt="Zrzut ekranu 2025-05-23 o 00 28 42" src="https://github.com/user-attachments/assets/65869d46-6dee-44bd-af26-798fad758530" />
+<img width="1440" alt="Zrzut ekranu 2025-05-23 o 06 16 28" src="https://github.com/user-attachments/assets/598514f1-a89e-4e30-9e91-92e421dcbf16" />
 
 ### Ekran zwycięstwa 🏆
 
