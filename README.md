@@ -91,13 +91,13 @@ Gracz wygrywa, gdy posiada co najmniej po **1 sztuce każdego z następujących 
 ---
 
 ## ▶️ Jak uruchomić grę
-1.Sklonuj repozytorium
+1. Sklonuj repozytorium
 
-2,Otwórz projekt w Unity
+2. Otwórz projekt w Unity
 
-3.Załaduj główną scenę gry
+3. Załaduj główną scenę gry
 
-4.Wprowadź imiona graczy i rozpocznij rozgrywkę!
+4. Wprowadź imiona graczy i rozpocznij rozgrywkę!
 
 ---
 
