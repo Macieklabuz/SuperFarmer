@@ -1,134 +1,140 @@
-# 🐰 Superfarmer – Turowa gra o hodowli i wymianie zwierząt 🎲
+# 🐰 Superfarmer – Turn-based Animal Breeding and Trading Game 🎲
 
-To cyfrowa wersja klasycznej polskiej gry planszowej **Superfarmer**, stworzona w Unity. Gracze zbierają, rozmnażają i wymieniają zwierzęta, aby stworzyć najpełniejsze gospodarstwo, chroniąc się przy tym przed drapieżnikami.
-
----
-
-## 🎮 Funkcje gry
-
-- ✅ Rozgrywka turowa dla 2-4 graczy
-- 🎲 Dwie kostki z różnymi zwierzętami
-- 🐑 Rozmnażanie tylko dla zwierząt **wyrzuconych na kostkach** i **posiadanych przez gracza**
-- 🦊 Obsługa drapieżników (lis i wilk) zgodnie z zasadami
-- ♻️ System wymian oparty na przeliczniku królików
-- 🐕 Psy stróżujące (mały i duży) chronią zwierzęta
-- 🔁 Tylko jedna wymiana możliwa na turę
-- 🏆 Warunek zwycięstwa: posiadanie po jednej sztuce każdego podstawowego zwierzęcia
+A digital version of the classic Polish board game **Superfarmer**, developed in Unity. Players collect, breed, and trade animals to build the most complete farm while protecting it from predators.
 
 ---
 
-## 🖥️ Technologie
+## 🎮 Game Features
 
-- Unity 2024+
+- ✅ Turn-based gameplay for 2–4 players  
+- 🎲 Two dice with various animals  
+- 🐑 Breeding only for animals **rolled on the dice** and **owned by the player**  
+- 🦊 Predator mechanics (fox and wolf) according to game rules  
+- ♻️ Trading system based on rabbit exchange rates  
+- 🐕 Guard dogs (small and big) protect your animals  
+- 🔁 Only one trade allowed per turn  
+- 🏆 Victory condition: owning one of each basic animal
+
+---
+
+## 🖥️ Technologies
+
+- Unity 2024+  
 - C#
 
 ---
 
-## 🔄 Przebieg tury
+## 🔄 Turn Flow
 
-1. **Początek tury:**
-   - Gracz wybiera, czy chce przeprowadzić wymianę.
+1. **Start of the turn**  
+   - The player chooses whether to make a trade.
 
-2. **Jeśli gracz wybiera wymianę:**
-   - Pojawia się interfejs wymiany (`WymianaGUI`), w którym gracz:
-     - Wybiera zwierzę do wymiany
-     - Wybiera zwierzę, na które chce wymienić
-     - Potwierdza wymianę jednym przyciskiem
-   - Po zatwierdzeniu **kostki rzucają się automatycznie**
+2. **If the player chooses to trade**  
+   - A trading interface (`WymianaGUI`) appears where the player:  
+     - Selects the animal to give  
+     - Selects the animal to receive  
+     - Confirms the trade with one button  
+   - Dice roll automatically after confirming
 
-3. **Jeśli gracz rezygnuje z wymiany:**
-   - Gracz klika przycisk, który **ręcznie wykonuje rzut kostkami**
+3. **If the player skips trading**  
+   - The player manually rolls the dice with a button
 
-4. **Obsługa wyników kostek:**
-   - Jeżeli wypadnie lis lub wilk, drapieżniki atakują zgodnie z zasadami
-   - Tylko zwierzęta **wyrzucone na kostkach** i **posiadane** mogą się rozmnożyć
-   - Zwierzęta są dodawane do stada gracza
-   - UI aktualizuje liczby zwierząt oraz wyniki kostek
+4. **Processing dice results**  
+   - Fox or wolf may attack based on the result  
+   - Only animals **rolled** and **owned** can breed  
+   - New animals are added to the player’s herd  
+   - UI updates animal counts and dice visuals
 
-5. **Zakończenie tury:**
-   - Sprawdzany jest warunek zwycięstwa
-   - Jeśli nie został spełniony, tura przechodzi na kolejnego gracza
-
----
-
-## 🔁 Tabela wymian
-
-| Zwierzę        | Wartość                |
-|----------------|------------------------|
-| 1 Owca         | 6 królików             |
-| 1 Świnia       | 2 owce                 |
-| 1 Krowa        | 3 świnie               |
-| 1 Koń          | 2 krowy                |
-| 1 Mały pies    | 1 owca                 |
-| 1 Duży pies    | 1 krowa                |
+5. **End of the turn**  
+   - Victory condition is checked  
+   - If not met, the turn passes to the next player
 
 ---
 
-## 🧱 Struktura projektu
+## 🔁 Exchange Table
 
-- `GameMaster.cs` – Zarządza przebiegiem tury
-- `Player.cs` – Reprezentuje gracza i jego stado
-- `Herd.cs` – Przechowuje i modyfikuje ilości zwierząt
-- `BreedingLogic.cs` – Logika rozmnażania
-- `PredatorLogic.cs` – Obsługa lisa i wilka
-- `AnimalLimitManager.cs` – Ograniczenia maksymalnych ilości zwierząt
-- `SmartTradeManager.cs` – Obsługuje system wymian
-- `ExchangeButtonHandler.cs` – Obsługa przycisków wymiany w UI
-- `UIManager.cs` – Aktualizacja elementów interfejsu
-
----
-
-## 🏆 Warunek zwycięstwa
-
-Gracz wygrywa, gdy posiada co najmniej po **1 sztuce każdego z następujących zwierząt**:
-
-- 🐰 Królik
-- 🐑 Owca
-- 🐖 Świnia
-- 🐄 Krowa
-- 🐎 Koń
+| Animal         | Value             |
+|----------------|------------------|
+| 1 Sheep        | 6 rabbits         |
+| 1 Pig          | 2 sheep           |
+| 1 Cow          | 3 pigs            |
+| 1 Horse        | 2 cows            |
+| 1 Small dog    | 1 sheep           |
+| 1 Big dog      | 1 cow             |
 
 ---
 
-## ▶️ Jak uruchomić grę
-1. Sklonuj repozytorium
+## 🧱 Project Structure
 
-2. Otwórz projekt w Unity
-
-3. Załaduj główną scenę gry
-
-4. Wprowadź imiona graczy i rozpocznij rozgrywkę!
+- `GameMaster.cs` – Controls turn flow  
+- `Player.cs` – Represents the player and their herd  
+- `Herd.cs` – Stores and manages animal quantities  
+- `BreedingLogic.cs` – Handles animal reproduction  
+- `PredatorLogic.cs` – Handles fox and wolf logic  
+- `AnimalLimitManager.cs` – Limits animal quantities  
+- `SmartTradeManager.cs` – Manages the trading logic  
+- `ExchangeButtonHandler.cs` – UI handling for trades  
+- `UIManager.cs` – Updates the interface
 
 ---
 
-## 📸 Zrzuty ekranu
+## 🏆 Victory Condition
 
-### Ekran początkowy tury gracza
+A player wins when they own at least **one of each** of the following animals:
 
-Na przedstawionym zrzucie ekranu widać początek tury gracza. Gracz ma do wyboru wykonanie wymiany lub rezygnację z niej:
-<img width="1440" alt="Zrzut ekranu 2025-05-23 o 00 26 04" src="https://github.com/user-attachments/assets/0df6f4f5-0925-4481-9cd8-041e70a32ddc" />
+- 🐰 Rabbit  
+- 🐑 Sheep  
+- 🐖 Pig  
+- 🐄 Cow  
+- 🐎 Horse
 
-### Rzut kostką po rezygnacji z wymiany
+---
 
-Na tym zrzucie ekranu pokazane jest, co widzi gracz po wybraniu opcji braku wymiany. Gracz ma teraz możliwość wykonania rzutu kostką:
-<img width="1440" alt="Zrzut ekranu 2025-05-23 o 00 32 42" src="https://github.com/user-attachments/assets/3f06b383-a294-4597-9831-b90708c31e0b" />
+## ▶️ How to Launch the Game
 
-### Rozmnażanie po rzucie kostką
+1. Clone the repository  
+2. Open the project in Unity  
+3. Load the main game scene  
+4. Enter player names and start playing!
 
-Po kliknięciu przycisku rzut kostką, gra automatycznie zlicza zwierzęta w stadzie gracza oraz uwzględnia wynik z kostek. Zgodnie z zasadami gry, zwierzęta mogą się rozmnożyć – nowe osobniki zostają dodane do stada gracza:
-<img width="1440" alt="Zrzut ekranu 2025-05-23 o 00 27 44" src="https://github.com/user-attachments/assets/cef3ca7d-bc47-42d8-9fc2-530fa4ededae" />
+---
 
-### Mechanizm wymiany
+## 📸 Screenshots
 
-Po wybraniu opcji **Wymiana**, pojawia się specjalny panel. Po lewej stronie znajdują się zwierzęta, które gracz może oddać, a po prawej – zwierzęta dostępne do otrzymania. Można przeprowadzić tylko **jedną wymianę na turę**.  
-Jeśli gracz nie może przeprowadzić żadnej wymiany, może kliknąć przycisk **Anuluj**, by zrezygnować i wrócić do tury:
-<img width="1440" alt="Zrzut ekranu 2025-05-23 o 06 16 28" src="https://github.com/user-attachments/assets/598514f1-a89e-4e30-9e91-92e421dcbf16" />
+### Start of Player's Turn
 
-### Ekran zwycięstwa 🏆
+Player can choose to trade or skip:
 
-Gra kończy się, gdy któryś z graczy posiada **przynajmniej po jednym** z każdego z następujących zwierząt:  
-🐇 królik, 🐑 owca, 🐖 świnia, 🐄 krowa, 🐎 koń.  
+<img width="1440" alt="Turn Start" src="https://github.com/user-attachments/assets/0df6f4f5-0925-4481-9cd8-041e70a32ddc" />
 
-Po spełnieniu tego warunku wyświetlany jest **ekran zwycięstwa**, informujący o wygranej gracza:
-<img width="1440" alt="Zrzut ekranu 2025-05-23 o 00 56 11" src="https://github.com/user-attachments/assets/6b15014a-15b2-46fe-8985-e24f58eb23e3" />
+---
 
+### Dice Roll After Skipping Trade
+
+After skipping, the dice can be rolled:
+
+<img width="1440" alt="Dice Roll" src="https://github.com/user-attachments/assets/3f06b383-a294-4597-9831-b90708c31e0b" />
+
+---
+
+### Breeding After Dice Roll
+
+New animals are added based on herd and dice result:
+
+<img width="1440" alt="Breeding Result" src="https://github.com/user-attachments/assets/cef3ca7d-bc47-42d8-9fc2-530fa4ededae" />
+
+---
+
+### Trading Mechanism
+
+Panel for trading one animal for another. Only **one trade per turn**:
+
+<img width="1440" alt="Trade Panel" src="https://github.com/user-attachments/assets/598514f1-a89e-4e30-9e91-92e421dcbf16" />
+
+---
+
+### Victory Screen 🏆
+
+A player wins by owning: 🐇 rabbit, 🐑 sheep, 🐖 pig, 🐄 cow, 🐎 horse:
+
+<img width="1440" alt="Victory Screen" src="https://github.com/user-attachments/assets/6b15014a-15b2-46fe-8985-e24f58eb23e3" />
